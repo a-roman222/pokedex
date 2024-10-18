@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pokedex: 1
+  name: MyString
+  url_img: MyString
+  weight_kg: 1.5
+  hp: 1
+  attack: 1
+  defense: 1
+  sp_attack: 1
+  sp_defense: 1
+  speed: 1
+  generation: 1
+  is_legendary: false
+
+two:
+  pokedex: 1
+  name: MyString
+  url_img: MyString
+  weight_kg: 1.5
+  hp: 1
+  attack: 1
+  defense: 1
+  sp_attack: 1
+  sp_defense: 1
+  speed: 1
+  generation: 1
+  is_legendary: false
