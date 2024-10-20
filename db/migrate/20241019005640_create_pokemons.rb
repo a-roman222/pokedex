@@ -11,8 +11,9 @@ class CreatePokemons < ActiveRecord::Migration[7.2]
       t.integer :sp_attack
       t.integer :sp_defense
       t.integer :speed
-      t.integer :generation
+      t.integer :generation_id
       t.boolean :is_legendary
+      t.references :generation, null: false, foreign_key: true
 
       t.timestamps
     end
