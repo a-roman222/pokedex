@@ -11,7 +11,7 @@ one:
   sp_attack: 1
   sp_defense: 1
   speed: 1
-  generation: 1
+  generation_id: 1
   is_legendary: false
 
 two:
@@ -25,5 +25,5 @@ two:
   sp_attack: 1
   sp_defense: 1
   speed: 1
-  generation: 1
+  generation_id: 1
   is_legendary: false

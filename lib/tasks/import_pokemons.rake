@@ -17,7 +17,7 @@ namespace :import do
         sp_attack: row["sp_attack"],
         sp_defense: row["sp_defense"],
         speed: row["speed"],
-        generation: row["generation"],
+        generation_id: row["generation_id"],
         is_legendary: row["is_legendary"]
       )
     end
