@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_19_152407) do
+ActiveRecord::Schema[7.2].define(version: 2024_10_20_195515) do
   create_table "abilities", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -22,6 +22,15 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_19_152407) do
     t.string "g_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pokemon_abilities", force: :cascade do |t|
+    t.integer "pokemon_id", null: false
+    t.integer "ability_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ability_id"], name: "index_pokemon_abilities_on_ability_id"
+    t.index ["pokemon_id"], name: "index_pokemon_abilities_on_pokemon_id"
   end
 
   create_table "pokemon_types", force: :cascade do |t|
@@ -56,6 +65,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_19_152407) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "pokemon_abilities", "abilities"
+  add_foreign_key "pokemon_abilities", "pokemons"
   add_foreign_key "pokemon_types", "pokemons"
   add_foreign_key "pokemon_types", "types"
 end
