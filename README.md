@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is an interactive Pokedex that allows users to explore Pokémon from the first to the seventh generation, encompassing a total of approximately 800 Pokémon.
 
-Things you may want to cover:
+The information for each Pokémon has been extracted from a CSV (kagle.com) database and organized into different tables for easier management and access.
 
-* Ruby version
+![image](https://github.com/user-attachments/assets/3ba22047-d8f1-4190-bcf6-a3d7482c2a7b)
 
-* System dependencies
+Pokemon View
+![image](https://github.com/user-attachments/assets/e82ccc8e-231e-42cf-ab58-ca0e2988369e)
 
-* Configuration
 
-* Database creation
+Database model ERD
 
-* Database initialization
+![image](https://github.com/user-attachments/assets/04b4d162-b869-4954-a075-8ae93a574290)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
