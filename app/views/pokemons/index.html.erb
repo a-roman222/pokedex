@@ -1,43 +1,74 @@
-<h1>Pokedex</h1>
-
 <%= form_with(url: pokemons_path, method: :get, local: true) do %>
-  <div class="form-group">
-    <%= label_tag :search, "Search Pokémon by Name" %>
-    <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Enter Pokémon name" %>
+  <div class="field is-grouped is-align-items-flex-end">
+    <div class="control">
+      <%= label_tag :search, "Search Pokémon by Name:", class: "label" %>
+      <%= text_field_tag :search, params[:search], placeholder: "Enter Pokémon name", class: "input is-normal" %>
+    </div>
+
+    <div class="control">
+      <%= label_tag :type_id, "Filter by Type:", class: "label" %>
+
+      <div class="control">
+        <div class="select">
+          <%= select_tag :type_id, options_from_collection_for_select(@types.map { |type| [type.name.capitalize, type.id] }, :last, :first, params[:type_id]), include_blank: "All Types", class: "" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="control">
+      <%= label_tag :generation_id, "Generation:", class: "label" %>
+      <div class="control">
+        <div class="select">
+          <%= select_tag :generation_id, options_from_collection_for_select(@generations, :id, :g_name, params[:generation_id]), include_blank: "All Generations", class: "" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="control">
+      <%= submit_tag "Search", class: "button is-primary" %>
+    </div>
   </div>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
+
 
 <% if flash[:alert] %>
   <div class="alert alert-warning">
     <%= flash[:alert] %>
   </div>
 <% end %>
+<br>
 
-<table>
-  <thead>
-    <tr>
-      <th>Pokedex</th>
-      <th>Name</th>
-      <th>Weight (kg)</th>
-      <th>Legendary</th>
-      <th>Generation</th>
-      <th>Types</th>
-      <th>Abilities</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @pokemons.each do |pokemon| %>
+<h1 class="title has-text-centered">Pokédex</h1>
+
+<div class="table-container">
+  <table class="table is-striped is-bordered is-hoverable is-fullwidth">
+    <thead>
       <tr>
-        <td><%= pokemon.pokedex %></td>
-        <td><%= link_to pokemon.name, pokemon_path(pokemon) %></td>
-        <td><%= pokemon.weight_kg %></td>
-        <td><%= pokemon.is_legendary ? 'Yes' : 'No' %></td>
-        <td><%= pokemon.generation&.g_name %></td>
-        <td><%= pokemon.types.map(&:name).join(', ') %></td>
-        <td><%= pokemon.abilities.map(&:name).join(', ') %></td>
+        <th>Pokedex</th>
+        <th>Name</th>
+        <th>Weight (kg)</th>
+        <th>Legendary</th>
+        <th>Generation</th>
+        <th>Types</th>
+        <th>Abilities</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= paginate @pokemons %>
+    </thead>
+    <tbody>
+      <% @pokemons.each do |pokemon| %>
+        <tr>
+          <td><%= pokemon.pokedex %></td>
+          <td><%= link_to pokemon.name, pokemon_path(pokemon) %></td>
+          <td><%= pokemon.weight_kg %></td>
+          <td><%= pokemon.is_legendary ? 'Yes' : 'No' %></td>
+          <td><%= pokemon.generation&.g_name %></td>
+          <td><%= pokemon.types.map { |type| type.name.capitalize }.join(', ') %></td>
+          <td><%= pokemon.abilities.map(&:name).join(', ') %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+</div>
+<div><%= paginate @pokemons %></div>
+<br>
