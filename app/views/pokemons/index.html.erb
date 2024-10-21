@@ -1,15 +1,15 @@
-<h1>Pokedex#index</h1>
+<h1>Pokedex</h1>
 
 <table>
   <thead>
     <tr>
       <th>Pokedex</th>
       <th>Name</th>
-      <th>Types</th>
-      <th>Abilities</th>
       <th>Weight (kg)</th>
       <th>Legendary</th>
       <th>Generation</th>
+      <th>Types</th>
+      <th>Abilities</th>
     </tr>
   </thead>
   <tbody>
@@ -17,13 +17,12 @@
       <tr>
         <td><%= pokemon.pokedex %></td>
         <td><%= link_to pokemon.name, pokemon_path(pokemon) %></td>
-        <td><%= pokemon.types.map(&:name).join(', ') %></td>
-        <td><%= pokemon.abilities.map(&:name).join(', ') %></td>
         <td><%= pokemon.weight_kg %></td>
         <td><%= pokemon.is_legendary ? 'Yes' : 'No' %></td>
         <td><%= pokemon.generation&.g_name %></td>
+        <td><%= pokemon.types.map(&:name).join(', ') %></td>
+        <td><%= pokemon.abilities.map(&:name).join(', ') %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
