@@ -13,22 +13,16 @@
     <link rel="icon" href="/pb.png" type="image/png">
     <link rel="icon" href="/pb.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/icon.png">
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-
   </head>
 
   <body>
     <div class="container is-fullhd">
-
-<br>
+    <br>
     <nav class="navbar is-danger has-background-danger" role="navigation" aria-label="main navigation">
-
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
           <%= link_to 'Home', pokemons_path, class: "navbar-item" %>
@@ -36,31 +30,27 @@
         </div>
       </div>
     </nav>
-<br>
+    <br>
 
-
-  <div class="is-flex is-justify-content-center">
-    <figure class="image" style="width: 300px;">
-      <img src="/pokedex.png" alt="Pokedex">
-    </figure>
-  </div>
-
-
-
+    <div class="is-flex is-justify-content-center">
+      <figure class="image" style="width: 300px;">
+        <img src="/pokedex.png" alt="Pokedex">
+      </figure>
+    </div>
     <%= yield %>
     </div>
 
     <footer class="footer has-background-dark has-text-white-ter">
-  <div class="content has-text-centered">
-    <p>
-      <strong class="has-text-danger">Pokedex Project</strong> by <a href="https://www.linkedin.com/in/anroman/" class="has-text-white">Andres Roman</a>
-      // Rails Intro Project.
-    </p>
-    <p>
-      <a href="https://github.com/a-roman222" class="has-text-white"><i class="fab fa-github"></i> &nbsp; GitHub</a>
-    </p>
-  </div>
-</footer>
+      <div class="content has-text-centered">
+        <p>
+          <strong class="has-text-danger">Pokedex Project</strong> by <a href="https://www.linkedin.com/in/anroman/" class="has-text-white">Andres Roman</a>
+          // Rails Intro Project.
+        </p>
+        <p>
+          <a href="https://github.com/a-roman222" class="has-text-white"><i class="fab fa-github"></i> &nbsp; GitHub</a>
+        </p>
+      </div>
+    </footer>
 
   </body>
 </html>
