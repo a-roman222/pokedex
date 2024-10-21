@@ -5,6 +5,7 @@ class PokemonsController < ApplicationController
 
     if params[:search].present?
       @pokemons = Pokemon.where("name LIKE ?", "%#{params[:search]}%").page(params[:page]).per(20)
+      flash[:alert] = "No Pokémon found for your search." if @pokemons.empty?
     elsif params[:type_id].present?
       @pokemons = Pokemon.joins(:types).where(types: { id: params[:type_id] }).page(params[:page]).per(20)
     elsif params[:generation_id].present?
