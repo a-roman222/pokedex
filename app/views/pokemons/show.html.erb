@@ -5,24 +5,58 @@
   <div class="columns is-centered">
     <div class="column is-half" style="display: flex; flex-direction: column; align-items: center">
       <figure class="image " style="width: 200px;">
-
         <img src="https://img.pokemondb.net/artwork/large/<%= @pokemon.name.downcase %>.jpg" alt="pokemon">
-
       </figure>
+      <div class="box" style="min-width: 360px;">
+        <table class="table is-striped is-hoverable is-fullwidth">
 
-      <div class="box">
-        <h2 class="subtitle">Details</h2>
-        <p><strong>Pokedex:</strong> <%= @pokemon.pokedex %></p>
-        <p><strong>Weight:</strong> <%= @pokemon.weight_kg %> kg</p>
-        <p><strong>HP:</strong> <%= @pokemon.hp %></p>
-        <p><strong>Attack:</strong> <%= @pokemon.attack %></p>
-        <p><strong>Defense:</strong> <%= @pokemon.defense %></p>
-        <p><strong>Special Attack:</strong> <%= @pokemon.sp_attack %></p>
-        <p><strong>Special Defense:</strong> <%= @pokemon.sp_defense %></p>
-        <p><strong>Speed:</strong> <%= @pokemon.speed %></p>
-        <p><strong>Generation:</strong> <%= @pokemon.generation&.g_name %></p>
-        <p><strong>Types:</strong> <%= @pokemon.types.map(&:name).join(', ').capitalize %></p>
-        <p><strong>Abilities:</strong> <%= @pokemon.abilities.map(&:name).join(', ').capitalize %></p>
+          <tbody>
+            <tr>
+              <td><strong>Pokedex:</strong></td>
+              <td><%= @pokemon.pokedex %></td>
+            </tr>
+            <tr>
+              <td><strong>Weight:</strong></td>
+              <td><%= @pokemon.weight_kg %> kg</td>
+            </tr>
+            <tr>
+              <td><strong>HP:</strong></td>
+              <td><%= @pokemon.hp %></td>
+            </tr>
+            <tr>
+              <td><strong>Attack:</strong></td>
+              <td><%= @pokemon.attack %></td>
+            </tr>
+            <tr>
+              <td><strong>Defense:</strong></td>
+              <td><%= @pokemon.defense %></td>
+            </tr>
+            <tr>
+              <td><strong>Special Attack:</strong></td>
+              <td><%= @pokemon.sp_attack %></td>
+            </tr>
+            <tr>
+              <td><strong>Special Defense:</strong></td>
+              <td><%= @pokemon.sp_defense %></td>
+            </tr>
+            <tr>
+              <td><strong>Speed:</strong></td>
+              <td><%= @pokemon.speed %></td>
+            </tr>
+            <tr>
+              <td><strong>Generation:</strong></td>
+              <td><%= @pokemon.generation&.g_name %></td>
+            </tr>
+            <tr>
+              <td><strong>Types:</strong></td>
+              <td><%= @pokemon.types.map(&:name).join(', ').capitalize %></td>
+            </tr>
+            <tr>
+              <td><strong>Abilities:</strong></td>
+              <td><%= @pokemon.abilities.map(&:name).join(', ').capitalize %></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
