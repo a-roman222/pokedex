@@ -1,13 +1,34 @@
-<h1><%= @pokemon.name %></h1>
 
-<p><strong>Pokedex:</strong> <%= @pokemon.pokedex %></p>
-<p><strong>Weight:</strong> <%= @pokemon.weight_kg %> kg</p>
-<p><strong>HP:</strong> <%= @pokemon.hp %></p>
-<p><strong>Attack:</strong> <%= @pokemon.attack %></p>
-<p><strong>Defense:</strong> <%= @pokemon.defense %></p>
-<p><strong>Special Attack:</strong> <%= @pokemon.sp_attack %></p>
-<p><strong>Special Defense:</strong> <%= @pokemon.sp_defense %></p>
-<p><strong>Speed:</strong> <%= @pokemon.speed %></p>
-<p><strong>Generation:</strong> <%= @pokemon.generation&.g_name %></p>
-<p><strong>Types:</strong> <%= @pokemon.types.map(&:name).join(', ') %></p>
-<p><strong>Abilities:</strong> <%= @pokemon.abilities.map(&:name).join(', ') %></p>
+<div class="container">
+  <h1 class="title has-text-centered"><%= @pokemon.name.capitalize %></h1>
+
+  <div class="columns is-centered">
+    <div class="column is-half" style="display: flex; flex-direction: column; align-items: center">
+      <figure class="image " style="width: 200px;">
+
+        <img src="https://img.pokemondb.net/artwork/large/<%= @pokemon.name.downcase %>.jpg" alt="pokemon">
+
+      </figure>
+
+      <div class="box">
+        <h2 class="subtitle">Details</h2>
+        <p><strong>Pokedex:</strong> <%= @pokemon.pokedex %></p>
+        <p><strong>Weight:</strong> <%= @pokemon.weight_kg %> kg</p>
+        <p><strong>HP:</strong> <%= @pokemon.hp %></p>
+        <p><strong>Attack:</strong> <%= @pokemon.attack %></p>
+        <p><strong>Defense:</strong> <%= @pokemon.defense %></p>
+        <p><strong>Special Attack:</strong> <%= @pokemon.sp_attack %></p>
+        <p><strong>Special Defense:</strong> <%= @pokemon.sp_defense %></p>
+        <p><strong>Speed:</strong> <%= @pokemon.speed %></p>
+        <p><strong>Generation:</strong> <%= @pokemon.generation&.g_name %></p>
+        <p><strong>Types:</strong> <%= @pokemon.types.map(&:name).join(', ').capitalize %></p>
+        <p><strong>Abilities:</strong> <%= @pokemon.abilities.map(&:name).join(', ').capitalize %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="has-text-centered">
+    <a class="button is-danger" href="<%= pokemons_path %>">Back to Pokedex</a>
+  </div>
+</div>
+<br>
