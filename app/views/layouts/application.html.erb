@@ -23,10 +23,28 @@
 
   <body>
     <div class="container is-fullhd">
-    <nav>
-      <%= link_to 'Home', pokemons_path %>
-      <%= link_to 'Acerca de', about_path %>
+
+<br>
+    <nav class="navbar is-danger has-background-danger" role="navigation" aria-label="main navigation">
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <%= link_to 'Home', pokemons_path, class: "navbar-item" %>
+          <%= link_to 'Acerca de', about_path, class: "navbar-item" %>
+        </div>
+      </div>
     </nav>
+<br>
+
+
+  <div class="is-flex is-justify-content-center">
+    <figure class="image" style="width: 300px;">
+      <img src="/pokedex.png" alt="Pokedex">
+    </figure>
+  </div>
+
+
+
     <%= yield %>
     </div>
   </body>
