@@ -4,7 +4,9 @@ This project is an interactive Pokedex that allows users to explore Pokémon fro
 
 The information for each Pokémon has been extracted from a CSV (kagle.com) database and organized into different tables for easier management and access.
 
-![image](https://github.com/user-attachments/assets/3ba22047-d8f1-4190-bcf6-a3d7482c2a7b)
+Main
+![image](https://github.com/user-attachments/assets/9b46b768-fa92-471e-be1f-2dfcb3393fcb)
+
 
 Pokemon View
 ![image](https://github.com/user-attachments/assets/e82ccc8e-231e-42cf-ab58-ca0e2988369e)
