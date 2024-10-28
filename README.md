@@ -9,7 +9,7 @@ Main
 
 
 Pokemon View
-![image](https://github.com/user-attachments/assets/e82ccc8e-231e-42cf-ab58-ca0e2988369e)
+![image](https://github.com/user-attachments/assets/f3c4549f-a76e-4255-af17-367c18b90b7b)
 
 
 Database model ERD
